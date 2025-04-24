@@ -1,0 +1,64 @@
+<template>
+  <div>
+    <nav>
+      <header>
+        <h1>Card Game</h1>
+        <router-link to="/" class="menu" id="cards">Home</router-link> |
+        <router-link to="/about" class="menu" id="regras">About</router-link>
+      </header>
+    </nav>
+    <router-view />
+  </div>
+</template>
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+nav {
+  width: 95%;
+  text-align: center;
+  font-family: "Passero One", sans-serif;
+}
+
+header {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  height: 70px;
+}
+
+.menu {
+  margin-right: 2%;
+  font-size: 2.5em;
+  letter-spacing: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px black;
+  color: #ccda0c;
+}
+
+.menu:hover {
+  font-size: 2.8em;
+  color: #dfe4a0;
+}
+
+.icon {
+  width: 3%;
+  cursor: pointer;
+  transition: all 400ms ease;
+}
+
+.icon:hover {
+  transform: rotate(180deg);
+}
+</style>
