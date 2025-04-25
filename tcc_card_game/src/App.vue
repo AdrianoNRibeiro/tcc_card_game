@@ -2,9 +2,13 @@
   <div>
     <nav>
       <header>
-        <h1>Card Game</h1>
-        <router-link to="/" class="menu" id="cards">Home</router-link> |
-        <router-link to="/about" class="menu" id="regras">About</router-link>
+        <div class="container-icon">
+          <img src="#" alt="Logo" class="icon" />
+        </div>
+        <div class="container-menu">
+          <router-link to="/" class="menu" id="cards">Home</router-link>
+          <router-link to="/about" class="menu" id="regras">About</router-link>
+        </div>
       </header>
     </nav>
     <router-view />
@@ -12,6 +16,12 @@
 </template>
 
 <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -21,44 +31,45 @@
 }
 
 nav {
-  width: 95%;
+  background-color: #2c3e50;
+  width: 100%;
   text-align: center;
   font-family: "Passero One", sans-serif;
 }
 
 header {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 5px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 95%;
+  padding: 5px;
   height: 70px;
 }
 
+.container-menu {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+}
+
 .menu {
-  margin-right: 2%;
-  font-size: 2.5em;
-  letter-spacing: 4px;
-  font-weight: bold;
+  color: #fff;
   text-decoration: none;
-  text-shadow: 1px 1px 2px black;
-  color: #ccda0c;
+  font-size: 30px;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+  font-family: "Passero One", sans-serif;
 }
 
 .menu:hover {
-  font-size: 2.8em;
-  color: #dfe4a0;
+  color: #ffcc00;
 }
 
-.icon {
-  width: 3%;
-  cursor: pointer;
-  transition: all 400ms ease;
-}
-
-.icon:hover {
-  transform: rotate(180deg);
+.container-icon {
+  flex-grow: 2;
+  flex-basis: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
 }
 </style>
