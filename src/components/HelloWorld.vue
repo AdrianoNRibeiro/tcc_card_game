@@ -116,6 +116,8 @@ export default {
         grids.appendChild(tagElement);
         tagElement.appendChild(tagImage);
         tagElement.appendChild(tagLabel);
+
+        tagImage.style.width = "100%";
       });
     },
   },
@@ -132,6 +134,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.main {
+  background-color: #361cca;
+}
+
 .grid,
 .grid2,
 .grid3,
