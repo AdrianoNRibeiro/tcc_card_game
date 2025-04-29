@@ -3,7 +3,7 @@
     <nav>
       <header>
         <div class="container-icon">
-          <img src="#" alt="Logo" class="icon" />
+          <img src="../public/img/iconCard.png" alt="Logo" class="icon" />
         </div>
         <div class="container-menu">
           <router-link to="/" class="menu" id="cards">Home</router-link>
@@ -71,5 +71,15 @@ header {
   justify-content: flex-start;
   align-items: center;
   padding: 10px;
+}
+
+.icon {
+  width: 50px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.icon:hover {
+  transform: rotate(180deg);
 }
 </style>

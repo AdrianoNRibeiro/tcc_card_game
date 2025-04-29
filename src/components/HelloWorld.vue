@@ -102,7 +102,6 @@ export default {
 
       listCards.forEach((tag) => {
         const tagElement = document.createElement("div");
-        const tagLabel = document.createElement("label");
         const tagImage = document.createElement("img");
 
         tagElement.className = "img-card";
@@ -110,14 +109,26 @@ export default {
         tagImage.src = `../img/${tag}.png`;
         tagImage.className = "img-cardTeste";
 
-        tagLabel.textContent = tag;
-        tagLabel.className = "nameCharacter";
-
         grids.appendChild(tagElement);
         tagElement.appendChild(tagImage);
-        tagElement.appendChild(tagLabel);
+
+        tagElement.style.marginTop = "8%";
+        tagElement.style.marginBottom = "5%";
 
         tagImage.style.width = "100%";
+        tagImage.style.height = "100%";
+        tagImage.style.borderRadius = "5%";
+        tagImage.style.boxShadow = "rgba(238, 236, 236, 0.35) 0px 5px 15px";
+        tagImage.style.cursor = "pointer";
+        tagImage.style.marginBottom = "1%";
+        tagImage.addEventListener("mouseover", () => {
+          tagImage.style.transform = "scale(1.1)";
+          tagImage.style.transition = "all 0.8s ease";
+        });
+        tagImage.addEventListener("mouseout", () => {
+          tagImage.style.transform = "";
+          tagImage.style.transition = "";
+        });
       });
     },
   },
@@ -163,6 +174,7 @@ export default {
   margin-right: auto;
   border-bottom: 1px solid #fcf812;
   border-top: 1px solid #fcf812;
+  padding: 8px;
 }
 
 .title2 {
@@ -310,5 +322,14 @@ nameCharacter {
 .f-frame {
   width: 95%;
   border-bottom: 2px solid green;
+}
+
+.card-player,
+.card-player2,
+.card-player3,
+.card-player4,
+.card-player5,
+.card-player6 {
+  border-radius: 5px;
 }
 </style>
