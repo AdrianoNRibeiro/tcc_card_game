@@ -5,6 +5,11 @@
         <div class="card-player">
           <div class="title"><h2>CARTAS DE LINGUAGENS</h2></div>
           <div class="grid" id="language-cards"></div>
+          <CardPopup
+            v-if="showPopup"
+            :current-card="selectedcard"
+            @hide-popup="showPopup = false"
+          ></CardPopup>
         </div>
         <div class="card-player2">
           <div class="title2"><h2>CARTAS DE PROJETOS(FUSÕES)</h2></div>
@@ -88,6 +93,8 @@ export default {
       dev: ["TRAINEE", "JUNIOR", "PLENO", "SENIOR"],
       frameworks: ["FreeRTOS", "CMSIS", "ULTIMATE++", "QT", "NANA++"],
       bugs: [],
+      selectedcard: null,
+      showPopup: false,
     };
   },
   methods: {
@@ -129,7 +136,14 @@ export default {
           tagImage.style.transform = "";
           tagImage.style.transition = "";
         });
+        tagElement.addEventListener("click", () => {
+          this.selectedCard = { name: tag, description: `Descrição da ${tag}` };
+          this.showPopup = true;
+        });
       });
+    },
+    hidePopup() {
+      this.showPopup = false;
     },
   },
   mounted() {
