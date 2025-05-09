@@ -5,11 +5,6 @@
         <div class="card-player">
           <div class="title"><h2>CARTAS DE LINGUAGENS</h2></div>
           <div class="grid" id="language-cards"></div>
-          <CardPopup
-            v-if="showPopup"
-            :current-card="selectedcard"
-            @hide-popup="showPopup = false"
-          ></CardPopup>
         </div>
         <div class="card-player2">
           <div class="title2"><h2>CARTAS DE PROJETOS(FUSÕES)</h2></div>
@@ -33,6 +28,44 @@
         </div>
       </div>
     </main>
+    <aside>
+      <div class="card-information" id="information">
+        <div class="card-amp">
+          <img src="" alt="" class="img-card-amp" id="card-show" />
+        </div>
+        <div class="card-description">
+          <div class="field f-name">
+            <div style="display: flex; justify-content: space-between">
+              <label style="text-decoration: underline">Nome:</label>
+              <img src="" alt="Fechar" id="close-info" class="close-info" />
+            </div>
+            <p id="card-name">ASSEMBELES</p>
+          </div>
+          <div class="field f-desc">
+            <label style="text-decoration: underline">Descrição:</label>
+            <p id="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+              voluptatibus, quod, voluptates, voluptas voluptatibus quos
+              voluptatum voluptatibus quos voluptatum voluptatibus quos
+              voluptatum voluptatibus quos voluptatum voluptatibus quos
+              voluptatum voluptatibus quos voluptatum voluptatibus quos
+            </p>
+          </div>
+          <div class="field f-frame">
+            <label style="text-decoration: underline">Frameworks:</label>
+            <div class="small-cards">
+              <img src="" alt="" class="img-frameworks" id="card-framework" />
+            </div>
+          </div>
+          <div class="field">
+            <label style="text-decoration: underline">Fusões:</label>
+            <div class="small-cards">
+              <img src="#" alt="" class="img-frameworks" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
   </div>
 </template>
 
@@ -41,9 +74,6 @@ export default {
   name: "HelloWorld",
   props: {
     msg: String,
-  },
-  components: {
-    CardPopup: () => import("./CardPopup.vue"),
   },
   data() {
     return {
@@ -139,14 +169,7 @@ export default {
           tagImage.style.transform = "";
           tagImage.style.transition = "";
         });
-        tagElement.addEventListener("click", () => {
-          this.selectedCard = { name: tag, description: `Descrição da ${tag}` };
-          this.showPopup = true;
-        });
       });
-    },
-    hidePopup() {
-      this.showPopup = false;
     },
   },
   mounted() {
@@ -235,7 +258,7 @@ h2 {
   transition: all 400ms ease;
 }
 
-nameCharacter {
+.nameCharacter {
   text-align: center;
   font-family: "Passero One", sans-serif;
   font-size: 1.4em;
