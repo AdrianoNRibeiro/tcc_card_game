@@ -42,6 +42,9 @@ export default {
   props: {
     msg: String,
   },
+  components: {
+    CardPopup: () => import("./CardPopup.vue"),
+  },
   data() {
     return {
       characters: [
